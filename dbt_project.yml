@@ -24,6 +24,14 @@ models:
       +materialized: view
       +schema: STAGING
 
-    marts:
+    dimensions:
       +materialized: table
-      +schema: MARTS
+      +schema: DIM
+
+    facts:
+      +materialized: table
+      +schema: FACT
+
+    reporting:
+      +materialized: view
+      +schema: REPORTING
