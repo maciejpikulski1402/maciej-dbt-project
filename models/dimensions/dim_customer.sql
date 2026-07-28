@@ -1,9 +1,7 @@
 select
 
     customer_id,
-
     customer_name,
-
-   country
+    country
 
 from {{ ref('stg_customer') }}
