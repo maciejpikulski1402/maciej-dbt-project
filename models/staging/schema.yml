@@ -1,0 +1,78 @@
+version: 2
+
+models:
+
+  - name: stg_customer
+    description: "Cleaned customer data loaded from Google Sheets."
+
+    columns:
+
+      - name: customer_id
+        description: "Unique identifier of a customer."
+
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: "Customer full name."
+
+        tests:
+          - not_null
+
+      - name: country
+        description: "Customer country."
+
+  - name: stg_products
+    description: "Cleaned product data."
+
+    columns:
+
+      - name: product_id
+
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+
+        tests:
+          - not_null
+
+      - name: category
+
+      - name: price
+
+        tests:
+          - not_null
+
+  - name: stg_sales
+    description: "Sales transactions."
+
+    columns:
+
+      - name: sale_id
+
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+
+        tests:
+          - not_null
+
+      - name: product_id
+
+        tests:
+          - not_null
+
+      - name: quantity
+
+        tests:
+          - not_null
+
+      - name: sale_date
+
+        tests:
+          - not_null
