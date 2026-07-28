@@ -1,5 +1,9 @@
-select 
-   customer_id,
-    upper(customer_name) as customer_name,
-country
-from {{ source('google_sheets','CUSTOMER') }}
+select
+
+    customer_id,
+    customer_name,
+    country,
+
+    _fivetran_synced
+
+from {{ source('google_sheets', 'CUSTOMER') }}
