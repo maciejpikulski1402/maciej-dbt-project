@@ -4,7 +4,7 @@
 ) }}
 
 select
-
+    {{ surrogate_key('s.customer_id','s.product_id') }} as sales_key,
     s.sale_id,
     s.sale_date,
 
