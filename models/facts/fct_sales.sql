@@ -19,7 +19,7 @@ select
     s.quantity,
     p.price,
 
-    s.quantity * p.price as sales_amount
+    {{ calculate_sales_amount('s.quantity', 'p.price') }} as sales_amount
 
 from {{ ref('stg_sales') }} s
 
