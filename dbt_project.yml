@@ -37,3 +37,7 @@ models:
     reporting:
       +materialized: view
       +schema: REPORTING
+
+snapshots:
+  maciej_project:
+    +schema: SNAPSHOTS
