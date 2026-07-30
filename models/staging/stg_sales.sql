@@ -1,11 +1,8 @@
 select
 
-    sale_id,
-    customer_id,
-    product_id,
-    quantity,
-    sale_date,
+    {{ dbt_utils.star(
+        from=source('google_sheets','SALES'),
+        except=["_ROW","_FIVETRAN_SYNCED"]
+    ) }}
 
-    _fivetran_synced
-
-from {{ source('google_sheets', 'SALES') }}
+from {{ source('google_sheets','SALES') }}
